@@ -1,6 +1,6 @@
 {
   "name": "koa2-joi-validate",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "validate koa2 application inputs and parameters using joi",
   "main": "index.js",
   "scripts": {
