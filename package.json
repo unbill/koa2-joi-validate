@@ -1,0 +1,37 @@
+{
+  "name": "koa2-joi-validate",
+  "version": "0.2.0",
+  "description": "validate koa2 application inputs and parameters using joi",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "keywords": [
+    "joi",
+    "koa",
+    "koa2",
+    "koa-router",
+    "router",
+    "validation",
+    "validator",
+    "middleware",
+    "validate",
+    "sanatize",
+    "sanatise",
+    "input",
+    "parameter"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dunnodv/koa2-joi-validate.git"
+  },
+  "author": "Oleh Berezhniak",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Dunnodv/koa2-joi-validate/issues"
+  },
+  "homepage": "https://github.com/Dunnodv/koa2-joi-validate#readme"
+}
