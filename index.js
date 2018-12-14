@@ -75,11 +75,17 @@ module.exports = function generateJoiMiddlewareInstance(cfg) {
       opts = opts || {}; // like config, default to empty object
 
       return async function Koa2JoiValidator(ctx, next) {
-        const ret = Joi.validate(ctx.request[type], schema, opts.joi || container.joi);
+        const ret = Joi.validate( (type === 'params') ? ctx[type] : ctx.request[type], schema, opts.joi || container.joi);
 
         if (!ret.error) {
-          ctx.request[container.storageProperty] = ctx.request[type];
-          ctx.request[type] = ret.value;
+          if ( type === 'params') {
+            ctx[container.storageProperty] = ctx[type];
+            ctx[type] = ret.value;
+          } else {
+            ctx.request[container.storageProperty] = ctx.request[type];
+            ctx.request[type] = ret.value;
+          }
+
           await next()
         } else if (opts.passError || cfg.passError) {
           ret.error.type = type;

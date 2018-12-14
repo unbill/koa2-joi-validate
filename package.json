@@ -35,6 +35,9 @@
   },
   "homepage": "https://github.com/Dunnodv/koa2-joi-validate#readme",
   "dependencies": {
-    "joi": "^10.6.0"
+    "joi": "^10.6.0",
+    "koa": "^2.6.2",
+    "koa-bodyparser": "^4.2.1",
+    "koa-router": "^7.4.0"
   }
 }

@@ -37,26 +37,27 @@ yarn add koa2-joi-validate joi
 ## Usage
 
 ```js
-const Joi = require('joi')
-const app = require('koa')();
-const validator = require('koa2-joi-validate')({})
+const Joi = require('joi');
+const Koa = require('koa');
+const app = new Koa();
 const Router = require('koa-router');
 
+const validator = require('koa2-joi-validate')();
 const querySchema = Joi.object({
   type: Joi.string().required().valid('food', 'drinks', 'entertainment')
 })
 
 const router = new Router();
 
-router.get('/test', 
-    validator.query(querySchema, {joi: joiOpts}), 
-    (ctx, next) => {
-        console.log(`original query ${JSON.stringify(ctx.request.originalQuery)} vs. 
+router.post('/test/:type',
+  validator.query(querySchema),
+  (ctx, next) => {
+    console.log(`original query ${JSON.stringify(ctx.request.originalQuery)} vs. 
                      the sanatised query ${JSON.stringify(ctx.request.query)}`);
-    }
+  }
 );
 
-app.use(router);
+app.use(router.routes());
 ```
 
 
@@ -80,6 +81,7 @@ router.get(
   validator.headers(headerSchema),
   validator.body(bodySchema),
   validator.query(querySchema),
+  validator.params(paramsSchema),
   routeHandler
 );
 ```
@@ -146,7 +148,9 @@ const validator = require('koa2-joi-validate')({
   passError: true // NOTE: this tells the module to pass the error along for you
 });
 
-const app = require('koa')();
+const Koa = require('koa');
+const app = new Koa();
+
 const Router = require('koa-router');
 const router = new Router();
 
@@ -174,7 +178,7 @@ router.get('/orders',
     }
 );
 
-app.use(router);
+app.use(router.routes());
 ```
 
 
