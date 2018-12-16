@@ -75,6 +75,7 @@ module.exports = function generateJoiMiddlewareInstance(cfg) {
         const ret = Joi.validate( (type === 'params') ? ctx[type] : ctx.request[type], schema, opts.joi || container.joi);
 
         if (!ret.error) {
+
           if ( type === 'params' ) {
             ctx[container.storageProperty] = ctx[type];
             ctx[type] = ret.value;
