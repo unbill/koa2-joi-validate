@@ -7,7 +7,7 @@
     "test": "mocha *.test.js"
   },
   "engines": {
-    "node": ">=6.0.0"
+    "node": ">=7.0.0"
   },
   "keywords": [
     "joi",
