@@ -11,7 +11,7 @@ validated.
 same applies for headers, query, and params, but...
 * Retains the original `contenxt.request.body` inside a new property named `contenxt.request.originalBody`
 . The same applies for headers, query, and params using the `original` prefix,
-e.g `contenxt.request.originalQuery` will contain the `contenxt.request.query` as it looked *before*
+e.g `contenxt.originalQuery` will contain the `contenxt.query` as it looked *before*
 validation.
 * Passes sensible default options to Joi for headers, params, query, and body.
 These are detailed below.
@@ -118,7 +118,7 @@ router.get(
 The following sensible defaults are applied if you pass none:
 
 #### Query
-* convert: true
+* convert: true (But Koa2 always convert number to string.)
 * allowUnknown: false
 * abortEarly: false
 

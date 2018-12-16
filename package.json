@@ -4,7 +4,7 @@
   "description": "validate koa2 application inputs and parameters using joi",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "unit": "mocha *.test.js"
   },
   "engines": {
     "node": ">=6.0.0"
@@ -34,10 +34,19 @@
     "url": "https://github.com/Dunnodv/koa2-joi-validate/issues"
   },
   "homepage": "https://github.com/Dunnodv/koa2-joi-validate#readme",
-  "dependencies": {
+  "peerDependencies": {
+    "joi": "*"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "clear-require": "^3.0.0",
     "joi": "^10.6.0",
     "koa": "^2.6.2",
     "koa-bodyparser": "^4.2.1",
-    "koa-router": "^7.4.0"
+    "koa-router": "^7.4.0",
+    "mocha": "^5.2.0",
+    "sinon": "^7.2.2",
+    "supertest": "^3.3.0",
+    "tape": "^4.9.1"
   }
 }

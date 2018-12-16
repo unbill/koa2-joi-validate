@@ -62,10 +62,7 @@ module.exports = function generateJoiMiddlewareInstance(cfg) {
 
   const Joi = cfg.joi || require('joi');
 
-  // We'll return this instance of the middleware
-  const instance = {
-    response
-  };
+  const instance = { };
 
   Object.keys(containers).forEach(type => {
     // e.g the "body" or "query" from above
@@ -78,7 +75,7 @@ module.exports = function generateJoiMiddlewareInstance(cfg) {
         const ret = Joi.validate( (type === 'params') ? ctx[type] : ctx.request[type], schema, opts.joi || container.joi);
 
         if (!ret.error) {
-          if ( type === 'params') {
+          if ( type === 'params' ) {
             ctx[container.storageProperty] = ctx[type];
             ctx[type] = ret.value;
           } else {
@@ -100,27 +97,4 @@ module.exports = function generateJoiMiddlewareInstance(cfg) {
 
   return instance;
 
-  function response(schema, opts = {}) {
-    const type = 'response';
-    return async (ctx, next) => {
-      const resJson = ctx.response.json.bind(ctx.response);
-      ctx.response.json = validateJson;
-      await next();
-
-      function validateJson(json) {
-        const ret = Joi.validate(json, schema, opts.joi);
-        const { error, value } = ret;
-        if (!error) {
-          // return res.json ret to retain express compatibility
-          return resJson(value)
-        } else if (opts.passError || cfg.passError) {
-          ret.error.type = type;
-          throw new JoiError(ret.error);
-        } else {
-          ctx.status = opts.statusCode || cfg.statusCode || 400;
-          ctx.body = buildErrorString(ret, type);
-        }
-      }
-    }
-  }
 };
