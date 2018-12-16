@@ -1,5 +1,5 @@
 # koa2-joi-validate
-
+[![Build Status](https://travis-ci.com/Dunnodv/koa2-joi-validate.svg?branch=master)](https://travis-ci.com/Dunnodv/koa2-joi-validate)
 [![npm version](https://badge.fury.io/js/koa2-joi-validate.svg)](https://badge.fury.io/js/koa2-joi-validate)
 
 A middleware for validating Koa2 inputs using Joi schemas. Fills some of the
@@ -11,13 +11,24 @@ validated.
 same applies for headers, query, and params, but...
 * Retains the original `contenxt.request.body` inside a new property named `contenxt.request.originalBody`
 . The same applies for headers, query, and params using the `original` prefix,
-e.g `contenxt.originalQuery` will contain the `contenxt.query` as it looked *before*
+e.g `contenxt.request.originalQuery` will contain the `contenxt.request.query` as it looked *before*
 validation.
 * Passes sensible default options to Joi for headers, params, query, and body.
 These are detailed below.
 * Uses `peerDependencies` to get a Joi instance of your choosing instead of
 using a fixed version.
 
+## Where does your data store?
+#### Joi Validate
+* headers - `contenxt.request.headers`
+* body - `contenxt.request.body`
+* query - `contenxt.request.query`
+* params - `contenxt.params`
+#### Original
+* headers - `contenxt.request.originalHeaders`
+* body - `contenxt.request.originalBody`
+* query - `contenxt.request.originalQuery`
+* params - `contenxt.originalParams`
 
 ## Install
 
