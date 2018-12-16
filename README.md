@@ -1,4 +1,5 @@
 # koa2-joi-validate
+[![npm](https://img.shields.io/npm/dt/koa2-joi-validate.svg)](https://www.npmjs.com/package/koa2-joi-validate)
 [![Build Status](https://travis-ci.com/Dunnodv/koa2-joi-validate.svg?branch=master)](https://travis-ci.com/Dunnodv/koa2-joi-validate)
 [![npm version](https://badge.fury.io/js/koa2-joi-validate.svg)](https://badge.fury.io/js/koa2-joi-validate)
 
