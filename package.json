@@ -4,7 +4,7 @@
   "description": "validate koa2 application inputs and parameters using joi",
   "main": "index.js",
   "scripts": {
-    "unit": "mocha *.test.js"
+    "test": "mocha *.test.js"
   },
   "engines": {
     "node": ">=6.0.0"
