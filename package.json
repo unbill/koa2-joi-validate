@@ -1,6 +1,6 @@
 {
-  "name": "koa2-joi-validate",
-  "version": "0.5.0",
+  "name": "@unbill/koa2-joi-validate",
+  "version": "1.0.0",
   "description": "validate koa2 application inputs and parameters using joi",
   "main": "index.js",
   "scripts": {
@@ -28,7 +28,7 @@
     "type": "git",
     "url": "git+https://github.com/Dunnodv/koa2-joi-validate.git"
   },
-  "author": "Oleh Berezhniak",
+  "author": "Oleh Berezhniak and BDCS Team",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Dunnodv/koa2-joi-validate/issues"
