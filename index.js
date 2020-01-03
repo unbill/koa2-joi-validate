@@ -60,7 +60,7 @@ function buildErrorString(err, container) {
 module.exports = function generateJoiMiddlewareInstance(cfg) {
   cfg = cfg || {}; // default to an empty config
 
-  const Joi = cfg.joi || require('joi');
+  const Joi = cfg.joi || require('@hapi/joi');
 
   const instance = { };
 

@@ -49,10 +49,10 @@ yarn add koa2-joi-validate joi
 ## Usage
 
 ```js
-const Joi = require('joi');
+const Joi = require('@hapi/joi');
 const Koa = require('koa');
 const app = new Koa();
-const Router = require('koa-router');
+const Router = require('@koa/router');
 
 const validator = require('koa2-joi-validate')();
 const querySchema = Joi.object({
@@ -163,7 +163,7 @@ const validator = require('koa2-joi-validate')({
 const Koa = require('koa');
 const app = new Koa();
 
-const Router = require('koa-router');
+const Router = require('@koa/router');
 const router = new Router();
 
 // Before your routes add a standard Koa2 error handler. This will be passed the Joi

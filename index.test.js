@@ -1,6 +1,6 @@
 'use strict'
 
-const Joi = require('joi')
+const Joi = require('@hapi/joi')
 const sinon = require('sinon')
 const supertest = require('supertest')
 const expect = require('chai').expect
@@ -12,7 +12,7 @@ describe('Koa2 JOI TEST', function() {
   const bodyParser = require('koa-bodyparser');
   app.use(bodyParser());
 
-  const Router = require('koa-router');
+  const Router = require('@koa/router');
   const router = new Router();
 
   const server = app.listen(3000);

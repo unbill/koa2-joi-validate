@@ -7,7 +7,7 @@
     "test": "mocha *.test.js"
   },
   "engines": {
-    "node": ">=7.0.0"
+    "node": ">=8.0.0"
   },
   "keywords": [
     "joi",
@@ -35,18 +35,18 @@
   },
   "homepage": "https://github.com/Dunnodv/koa2-joi-validate#readme",
   "peerDependencies": {
-    "joi": "*"
+    "@hapi/joi": "*"
   },
   "devDependencies": {
     "chai": "^4.2.0",
     "clear-require": "^3.0.0",
-    "joi": "^10.6.0",
-    "koa": "^2.6.2",
+    "@hapi/joi": "^15.1.1",
+    "koa": "^2.11.0",
     "koa-bodyparser": "^4.2.1",
-    "koa-router": "^7.4.0",
-    "mocha": "^5.2.0",
-    "sinon": "^7.2.2",
+    "@koa/router": "^8.0.5",
+    "mocha": "^6.2.2",
+    "sinon": "^8.0.2",
     "supertest": "^3.3.0",
-    "tape": "^4.9.1"
+    "tape": "^4.12.1"
   }
 }
